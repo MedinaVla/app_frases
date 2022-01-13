@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:frases/frases.dart';
 
@@ -17,5 +19,5 @@ final _repositoryFrases =
     Provider<IFrasesRepository>((ref) => FrasesRepository());
 
 /// Use Cases Providers
-final _getFraseProvider = Provider(
-    (ref) => GetFrasesCumple(repository: ref.watch(_repositoryFrases)));
+final _getFraseProvider =
+    Provider((ref) => GetFrases(repository: ref.watch(_repositoryFrases)));

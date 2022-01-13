@@ -4,14 +4,18 @@ part of 'frases_provider.dart';
 class FrasesNotifier extends StateNotifier<FrasesState> {
   /// Base constructor expects StateNotifier use_cases to
   /// read its usecases and also defines inital state
-  FrasesNotifier({required GetFrasesCumple useCase})
+  FrasesNotifier({required GetFrases useCase})
       : _useCase = useCase,
         super(const FrasesState.initial());
-  final GetFrasesCumple _useCase;
+  final GetFrases _useCase;
 
-  void getFrase() async {
+  void getFrase(String typeFrase) async {
     state = const FrasesState.loading();
-    final result = await _useCase();
+    log('Esperando');
+    await Future.delayed(const Duration(seconds: 1));
+    log('Esperando2');
+
+    final result = await _useCase(GetFraseParams(typeFrase: typeFrase));
     result.fold((error) => state = const FrasesState.error(),
         (frase) => state = FrasesState.data(frase));
   }

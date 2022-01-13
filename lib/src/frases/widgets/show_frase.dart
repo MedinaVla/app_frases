@@ -1,3 +1,4 @@
+import 'package:app_frases/src/core/providers.dart';
 import 'package:app_frases/src/frases/logic/frases_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -8,6 +9,7 @@ class ShowFrase extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     final fraseState = ref.watch(frasesNotifierProvider);
+    final fraseSelectedState = ref.watch(frasesSelectedProvider.state);
     return Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -19,7 +21,9 @@ class ShowFrase extends ConsumerWidget {
                 height: MediaQuery.of(context).size.height / 2,
                 child: fraseState.when(
                     initial: () => const Text(''),
-                    loading: () => const Text(''),
+                    loading: () => const Center(
+                          child: CircularProgressIndicator(),
+                        ),
                     data: (frase) => Padding(
                           padding: const EdgeInsets.all(10),
                           child: Center(
@@ -32,8 +36,9 @@ class ShowFrase extends ConsumerWidget {
                     error: (error) => const Text(''))),
             const Spacer(),
             FloatingActionButton(
-              onPressed: () =>
-                  ref.read(frasesNotifierProvider.notifier).getFrase(),
+              onPressed: () => ref
+                  .read(frasesNotifierProvider.notifier)
+                  .getFrase(fraseSelectedState.state),
               child: const Icon(Icons.get_app),
             )
           ],

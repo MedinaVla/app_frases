@@ -6,7 +6,7 @@ import 'package:frases/src/core/utils.dart';
 
 abstract class ILocalDataSource {
   ///Get Frase Cumple
-  String getFraseCumple();
+  String getFraseType(String typeFrase);
 
   ///Get Frase Amor
 
@@ -21,11 +21,18 @@ class InternalDataSource implements ILocalDataSource {
   }
 
   @override
-  String getFraseCumple() {
+  String getFraseType(String typeFrase) {
     try {
+      logger.log(typeFrase);
       final random = Random();
-      final item = frasesCumple[random.nextInt(frasesCumple.length)];
-      return item;
+      switch (typeFrase) {
+        case 'Amor':
+          return frasesAmor[random.nextInt(frasesAmor.length)];
+        case 'Cumpleaños':
+          return frasesCumple[random.nextInt(frasesCumple.length)];
+        default:
+          return frasesCumple[random.nextInt(frasesCumple.length)];
+      }
     } catch (e) {
       throw ServerException();
     }

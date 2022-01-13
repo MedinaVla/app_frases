@@ -16,10 +16,10 @@ class FrasesRepository implements IFrasesRepository {
   }
 
   @override
-  Future<Either<Failure, String>> getFraseCumple() async {
+  Future<Either<Failure, String>> getFrase(String typeFrase) async {
     try {
-      InternalDataSource localDataSource = InternalDataSource();
-      final result = localDataSource.getFraseCumple();
+      final localDataSource = InternalDataSource();
+      final result = localDataSource.getFraseType(typeFrase);
       return Right(result);
     } catch (e) {
       return Left(ServerFailure());
