@@ -1,4 +1,5 @@
 import 'package:app_frases/src/core/providers.dart';
+import 'package:app_frases/src/frases/widgets/fondo_widget.dart';
 import 'package:app_frases/src/frases/widgets/show_frase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -18,14 +19,7 @@ class FrasesPage extends ConsumerWidget {
         ),
         body: Stack(
           children: [
-            Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/fondo.jpg"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
+            FondoWidget(urlImage: 'assets/images/$fraseSelected.jpg'),
             const Center(
               child: ShowFrase(),
             ),

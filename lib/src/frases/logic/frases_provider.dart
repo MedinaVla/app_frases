@@ -8,7 +8,7 @@ part 'frases_state_notifier.dart';
 
 /// Provider to use the FrasesStateNotifier
 final frasesNotifierProvider =
-    StateNotifierProvider<FrasesNotifier, FrasesState>(
+    StateNotifierProvider.autoDispose<FrasesNotifier, FrasesState>(
   (ref) => FrasesNotifier(useCase: ref.watch(_getFraseProvider)),
 );
 
