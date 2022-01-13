@@ -1,0 +1,32 @@
+name: frases
+description: Dart package to manage {Feature} data and domain layers.
+version: 0.0.1+1
+
+environment:
+  sdk: ">=2.15.1 <3.0.0"
+
+dependencies:
+  # Scope Packages
+  equatable:
+  errors:
+    git:
+      url: git://github.com/NoScopeDevs/errors
+    
+
+
+  dartz:
+  freezed_annotation:
+  path:
+
+dev_dependencies:
+  # code generators
+  build_runner:
+  freezed:
+  json_serializable:
+
+  # testing
+  mockito:
+  test:
+
+  # static analysis
+  very_good_analysis:
