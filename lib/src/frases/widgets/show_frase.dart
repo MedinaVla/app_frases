@@ -15,9 +15,9 @@ class ShowFrase extends ConsumerWidget {
         child: Column(
           children: [
             Container(
-                decoration: BoxDecoration(
-                    color: Colors.pink[200],
-                    borderRadius: const BorderRadius.all(Radius.circular(20))),
+                decoration: const BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
                 height: MediaQuery.of(context).size.height / 2,
                 child: fraseState.when(
                     initial: () => const Text(''),

@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:errors/errors.dart';
 import 'package:frases/src/core/usecase.dart';
+import 'package:frases/src/domain/entities/frase.dart';
 import 'package:frases/src/domain/repositories/ifrases_repository.dart';
 
 ///Uses Cases Get Frases de Cumple
@@ -27,7 +28,7 @@ class GetFraseParams extends Equatable {
   });
 
   ///Type of frase
-  final String typeFrase;
+  final Frase typeFrase;
 
   @override
   List<Object> get props => [typeFrase];

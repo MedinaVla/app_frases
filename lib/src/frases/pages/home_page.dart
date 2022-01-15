@@ -2,7 +2,6 @@ import 'package:app_frases/src/frases/widgets/list_view_frases.dart';
 import 'package:flutter/material.dart';
 
 import '../../settings/settings_view.dart';
-import '../logic/entities/frases.dart';
 import 'frases_page.dart';
 
 /// Displays a list of SampleItems.

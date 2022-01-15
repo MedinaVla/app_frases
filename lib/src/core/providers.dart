@@ -1,10 +1,10 @@
 // final List<Frases> items;
 
-import 'package:app_frases/src/frases/logic/entities/frases.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:frases/frases.dart';
 
-final frasesProvider = Provider<List<Frases>>(
-    (ref) => const [Frases('Cumpleaños'), Frases('Amor'), Frases('Futbol')]);
+final frasesProvider =
+    Provider<List<Frase>>((ref) => [FraseCumple(), FraseAmor(), FraseFutbol()]);
 
 final frasesSelectedProvider =
-    StateProvider((ref) => ref.watch(frasesProvider).first.typeOfFrase);
+    StateProvider((ref) => ref.watch(frasesProvider).first);

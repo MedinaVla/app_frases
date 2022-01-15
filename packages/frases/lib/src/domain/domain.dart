@@ -1,4 +1,5 @@
 // Export Entities
+export 'entities/frase.dart';
 
 // Export Repositories
 export 'repositories/ifrases_repository.dart';

@@ -9,11 +9,9 @@ class FrasesNotifier extends StateNotifier<FrasesState> {
         super(const FrasesState.initial());
   final GetFrases _useCase;
 
-  void getFrase(String typeFrase) async {
+  void getFrase(Frase typeFrase) async {
     state = const FrasesState.loading();
-    log('Esperando');
     await Future.delayed(const Duration(seconds: 1));
-    log('Esperando2');
 
     final result = await _useCase(GetFraseParams(typeFrase: typeFrase));
     result.fold((error) => state = const FrasesState.error(),

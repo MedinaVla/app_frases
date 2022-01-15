@@ -16,7 +16,7 @@ class FrasesRepository implements IFrasesRepository {
   }
 
   @override
-  Future<Either<Failure, String>> getFrase(String typeFrase) async {
+  Future<Either<Failure, String>> getFrase(Frase typeFrase) async {
     try {
       final localDataSource = InternalDataSource();
       final result = localDataSource.getFraseType(typeFrase);

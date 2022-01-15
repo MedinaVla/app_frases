@@ -1,11 +1,7 @@
-import 'dart:developer';
-
 import 'package:app_frases/src/core/providers.dart';
 import 'package:app_frases/src/frases/pages/frases_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'fondo_widget.dart';
 
 class ListViewFrasesWidget extends ConsumerWidget {
   const ListViewFrasesWidget({Key? key}) : super(key: key);
@@ -27,14 +23,14 @@ class ListViewFrasesWidget extends ConsumerWidget {
             final item = frases[index];
 
             return ListTile(
-                title: Text('Frases de ${item.typeOfFrase}'),
+                title: Text('Frases de $item'),
                 leading: const CircleAvatar(
                   // Display the Flutter Logo image asset.
                   foregroundImage: AssetImage('assets/images/flutter_logo.png'),
                 ),
                 onTap: () {
                   ///Guarda la frase Seleccionada
-                  fraseSelectedState.state = item.typeOfFrase;
+                  fraseSelectedState.state = item;
                   // Navigate to the details page. If the user leaves and returns to
                   // the app after it has been killed while running in the
                   // background, the navigation stack is restored.

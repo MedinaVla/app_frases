@@ -1,6 +1,3 @@
-/// Frases type
-enum FrasesType { cumple, amor }
-
 ///Listado de Frases
 List<String> frasesCumple = [
   'Cada año se agrega una vela extra a tu pastel. Espero que esta nueva vela traiga una sonrisa extra a tu vida. Feliz cumpleaños.',
@@ -32,3 +29,6 @@ List<String> frasesAmor = [
   'El tiempo te hace crecer y sirve de modelo para hacerte más hermosa cada día. Amor, feliz cumpleaños.',
   'La mala noticia es que me olvidé de enviarte a tiempo el mensaje de felicitación. La buena noticia es que me olvidé de tu edad. ¡Espero que hayas pasado un feliz cumpleaños!'
 ];
+
+///Frase de Futbol
+List<String> frasesFutbol = ['Pele es el mejor'];
